@@ -1,0 +1,9 @@
+[submodule "mflova-i3-setup"]
+	path = mflova-i3-setup
+	url = https://github.com/mflova/mflova-i3-setup.git
+[submodule "mflova-chrome-setup"]
+	path = mflova-chrome-setup
+	url = https://github.com/mflova/mflova-chrome-setup.git
+[submodule "mflova-vim-config"]
+	path = mflova-vim-config
+	url = https://github.com/mflova/mflova-vim-config.git
