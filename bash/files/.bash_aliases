@@ -15,25 +15,35 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias sds='source devel/setup.bash'
 alias opendir='xdg-open .'
+alias gitci='cz commit'
+alias turnoff='shutdown now'
+alias xc='xclip'
 
-# Dirs
-alias cdrovio='cd /home/manuflya/flyability/build_gaston/components/rovio'
-alias cdbuild_gaston='cd /home/manuflya/flyability/build_gaston'
-alias cdeliospy='cd /home/manuflya/flyability/eliospy'
-alias cdval='cd /home/manuflya/flyability/gaston_validation_tests'
-alias cdvim='cd ~/.vim'
-alias cdsetup='cd /home/manuflya/mflova-linux-setup'
+function scd() {
+    cd "$(dirname $1)"
+}
+
+rosfind() {
+    rostopic list | grep "$1"
+}
 
 # Quick edit of files
+alias edtest='vim ~/test/test.py'
+alias edcoptions='vim ~/mflova-linux-setup/mflova-chrome-setup/chromium-vim/background_scripts/options.js'
+alias edcreadme='vim ~/mflova-linux-setup/mflova-chrome-setup/README.md'
+alias edcconfig='vim ~/mflova-linux-setup/mflova-chrome-setup/chromium-vim/cvimrc'
 alias ediconfig='vim ~/.config/i3/config'
 alias sediconfig='s ~/.config/i3/config'
 alias edireadme='vim ~/mflova-linux-setup/mflova-i3-setup/README.md'
-alias edvimrc='vim ~/.vimrc'
-alias edvreadme='vim ~/.vim/README.md'
-alias edvtodo='vim ~/.vim/todo.txt'
+alias edvimrc='vim ~/mflova-linux-setup/mflova-vim-config/cfg/.vimrc'
+alias edale='vim ~/mflova-linux-setup/mflova-vim-config/cfg/ale.vim'
+alias edpythonsnippets='vim ~/mflova-linux-setup/mflova-vim-config/cfg/snippets/python.snippets'
+alias edvreadme='vim ~/mflova-linux-setup/mflova-vim-config/README.md'
+alias edvtodo='vim ~/mflova-linux-setup/mflova-vim-config/todo.txt'
 alias sedbashrc='s ~/.bashrc'
 alias edbashrc='vim ~/.bashrc'
 alias edbashprofiles='vim ~/.bash_profile'
 alias sedaliases='s ~/.bash_aliases'
 alias edaliases='vim ~/.bash_aliases'
-alias edtodo='vim ~/TODO.txt'
+alias edtodo='vim ~/TODO.md'
+alias ednotes='vim ~/NOTES.md'

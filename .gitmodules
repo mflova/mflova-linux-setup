@@ -7,3 +7,6 @@
 [submodule "mflova-vim-config"]
 	path = mflova-vim-config
 	url = https://github.com/mflova/mflova-vim-config.git
+[submodule "mflova-coding-guidelines"]
+	path = mflova-coding-guidelines
+	url = https://github.com/mflova/mflova-coding-guidelines.git
