@@ -1,0 +1,17 @@
+- hosts: localhost
+  tasks:
+  - name: Install Terminator
+    apt: terminator
+    update_cache: yes
+
+  - name: Install FZF
+    apt:
+      name: fzf
+
+  - name: Clone FZF marks
+    ansible.builtin.git:
+      repo: 'https://github.com/urbainvaes/fzf-marks.git'
+      dest: "{{playbok_dir}}"
+
+  - name: Source FZF marks
+    ansible.builtin.shell: echo "source {{playbook_dir}}/fzf-marks/fzf-marks.plugin.bash" >> ~/.bashrc
