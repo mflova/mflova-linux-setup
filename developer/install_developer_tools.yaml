@@ -1,9 +1,26 @@
 # Called with: sudo ansible-playbook install_developer_tools.yaml --ask-become-pass"
 - hosts: localhost
+  become: yes
   tasks:
+
+  - name: Get $HOME variable
+    shell: "echo $HOME"
+    become: no
+    register: HOME
+
   - name: Install terminator
     apt:
       name: terminator
+
+  - name: Configure terminator
+    ansible.builtin.copy:
+      src: "{{playbook_dir}}/cfg/terminator/config"
+      dest: "{{HOME.stdout_lines[0]}}/.config/terminator/"
+
+  - name: Install Nerd Font
+    ansible.builtin.git:
+      repo: "https://aur.archlinux.org/nerd-fonts-hack.git"
+      dest: "{{HOME.stdout_lines[0]}}/.fonts"
 
   - name: Clone FZF
     ansible.builtin.git:
