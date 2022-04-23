@@ -8,6 +8,15 @@
     become: no
     register: HOME
 
+  - name: Configure aliases
+    ansible.builtin.copy:
+      src: "{{playbook_dir}}/cfg/.bash_aliases"
+      dest: "{{HOME.stdout_lines[0]}}/"
+
+  - name: Appending data to bashrc
+    shell: echo "cat {{playbook_dir}}/cfg/.bash_aliases" >> ~/.bash_aliases
+    become: no
+
   - name: Install terminator
     apt:
       name: terminator

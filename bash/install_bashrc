@@ -1,5 +1,0 @@
-echo "### Git" >> ~/.bashrc
-echo "function parse_git_branch {" >> ~/.bashrc
-echo "    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1]/"" >> ~/.bashrc
-echo "}" >> ~/.bashrc
-echo "PS1="$PS1\$(parse_git_branch)"" >> ~/.bashrc

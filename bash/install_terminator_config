@@ -1,2 +1,0 @@
-mkdir -p ~/.config/terminator
-cp files/config_terminator ~/.config/terminator/config
