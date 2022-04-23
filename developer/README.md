@@ -13,3 +13,4 @@ This includes:
 - Nerd Fonts
 - FZF on bash
 - FZF marks on bash
+- Git aliases

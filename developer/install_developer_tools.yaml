@@ -10,11 +10,11 @@
 
   - name: Configure aliases
     ansible.builtin.copy:
-      src: "{{playbook_dir}}/cfg/.bash_aliases"
+      src: "{{playbook_dir}}/cfg/bash/.bash_aliases"
       dest: "{{HOME.stdout_lines[0]}}/"
 
   - name: Appending data to bashrc
-    shell: echo "cat {{playbook_dir}}/cfg/.bash_aliases" >> ~/.bash_aliases
+    shell: "cat {{playbook_dir}}/cfg/bash/.bashrc >> ~/.bashrc"
     become: no
 
   - name: Install terminator
@@ -40,7 +40,6 @@
     shell: "{{playbook_dir}}/fzf/install"
     become: no
 
-
   - name: Clone FZF marks
     ansible.builtin.git:
       repo: 'https://github.com/urbainvaes/fzf-marks.git'
@@ -49,3 +48,23 @@
   - name: Source FZF marks
     shell: echo "source {{playbook_dir}}/fzf-marks/fzf-marks.plugin.bash" >> ~/.bashrc
     become: no
+
+  - name: Setting up git alias for checkout
+    shell: git config --global alias.co checkout
+    become: no
+
+  - name: Setting up git alias for branch
+    shell: git config --global alias.br branch
+    become: no
+
+  - name: Setting up git alias for status
+    shell: git config --global alias.st status
+    become: no
+
+  - name: Setting up git alias for commit
+    shell: git config --global alias.ci commit
+    become: no
+
+  - name: Install chrome and set up extensions
+    shell: bash {{playbook_dir}}/scripts/setup_chrome.sh
+    # Side note: blank.org is my home page, set up in the "redirect tab" plugin
