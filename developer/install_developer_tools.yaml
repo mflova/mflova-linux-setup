@@ -17,10 +17,10 @@
       src: "{{playbook_dir}}/cfg/terminator/config"
       dest: "{{HOME.stdout_lines[0]}}/.config/terminator/"
 
-  - name: Install Nerd Font
-    ansible.builtin.git:
-      repo: "https://aur.archlinux.org/nerd-fonts-hack.git"
-      dest: "{{HOME.stdout_lines[0]}}/.fonts"
+  - name: Install fonts
+    ansible.builtin.copy:
+      src: "{{playbook_dir}}/cfg/NerdFonts"
+      dest: "{{HOME.stdout_lines[0]}}/.local/share/fonts"
 
   - name: Clone FZF
     ansible.builtin.git:
