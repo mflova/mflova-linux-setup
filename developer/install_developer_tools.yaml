@@ -1,17 +1,25 @@
+# Called with: sudo ansible-playbook install_developer_tools.yaml --ask-become-pass"
 - hosts: localhost
   tasks:
-  - name: Install Terminator
-    apt: terminator
-    update_cache: yes
+  - name: Install terminator
+    apt:
+      name: terminator
+
+  - name: Clone FZF
+    ansible.builtin.git:
+      repo: "https://github.com/junegunn/fzf.git"
+      dest: "{{playbook_dir}}/fzf"
 
   - name: Install FZF
-    apt:
-      name: fzf
+    shell: "{{playbook_dir}}/fzf/install"
+    become: no
+
 
   - name: Clone FZF marks
     ansible.builtin.git:
       repo: 'https://github.com/urbainvaes/fzf-marks.git'
-      dest: "{{playbok_dir}}"
+      dest: "{{playbook_dir}}/fzf-marks"
 
   - name: Source FZF marks
-    ansible.builtin.shell: echo "source {{playbook_dir}}/fzf-marks/fzf-marks.plugin.bash" >> ~/.bashrc
+    shell: echo "source {{playbook_dir}}/fzf-marks/fzf-marks.plugin.bash" >> ~/.bashrc
+    become: no
