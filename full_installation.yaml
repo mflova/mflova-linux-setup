@@ -1,9 +1,6 @@
-- hosts: localhost
-  tasks:
+- name: Install I3 windows manager
+  import_playbook: "{{playbook_dir}}/mflova-i3-setup/install_i3.yaml"
 
-  - name: Install I3 windows manager
-    import_playbook: "{{playbook_dir}}/mflova-i3-setup/install_i3.yaml"
-
-  - name: Install developer tools
-    import_playbook: "{{playbook_dir}}/developer/install_developer_tools.yaml"
+- name: Install developer tools
+  import_playbook: "{{playbook_dir}}/developer/install_developer_tools.yaml"
 
