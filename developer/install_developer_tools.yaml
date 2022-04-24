@@ -8,6 +8,11 @@
     become: no
     register: HOME
 
+  - name: Get $USER variable
+    shell: echo $USER
+    become: no
+    register: USER
+
   - name: Configure aliases
     ansible.builtin.copy:
       src: "{{playbook_dir}}/cfg/bash/.bash_aliases"
@@ -36,9 +41,9 @@
       repo: "https://github.com/junegunn/fzf.git"
       dest: "{{playbook_dir}}/fzf"
 
-  - name: Manual installation FZF
-    shell: "sudo -E {{playbook_dir}}/fzf/install --key-bindings --completion --update-rc"
-    become: no
+  - name: Installation FZF
+    shell: "{{playbook_dir}}/fzf/install --key-bindings --completion --update-rc"
+    become_user: "{{USER.stdout_lines[0]}}"
 
   - name: Clone FZF marks
     ansible.builtin.git:
