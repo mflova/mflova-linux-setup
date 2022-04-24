@@ -36,9 +36,9 @@
       repo: "https://github.com/junegunn/fzf.git"
       dest: "{{playbook_dir}}/fzf"
 
-  - name: Install FZF
-    shell: "{{playbook_dir}}/fzf/install --key-bindings --completion --update-rc"
-    become: no
+  - name: Manual installation FZF
+    pause: 
+      prompt: "Copy-paste this into another terminal and press ENTER here: {{playbook_dir}}/fzf/install --key-bindings --completion --update-rc"
 
   - name: Clone FZF marks
     ansible.builtin.git:
