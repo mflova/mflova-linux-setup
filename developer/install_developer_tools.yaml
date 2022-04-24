@@ -38,7 +38,7 @@
 
   - name: Manual installation FZF
     pause: 
-      prompt: "Copy-paste this into another terminal and press ENTER here: {{playbook_dir}}/fzf/install --key-bindings --completion --update-rc"
+      prompt: "Copy-paste this into another terminal and press ENTER here: sudo {{playbook_dir}}/fzf/install --key-bindings --completion --update-rc"
 
   - name: Clone FZF marks
     ansible.builtin.git:
