@@ -42,8 +42,8 @@
       dest: "{{playbook_dir}}/fzf"
 
   - name: Installation FZF
-    shell: "{{playbook_dir}}/fzf/install --key-bindings --completion --update-rc"
-    become_user: "{{USER.stdout_lines[0]}}"
+    shell: "sudo -E {{playbook_dir}}/fzf/install --key-bindings --completion --update-rc"
+    become: no
 
   - name: Clone FZF marks
     ansible.builtin.git:
