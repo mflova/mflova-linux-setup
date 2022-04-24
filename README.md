@@ -19,6 +19,7 @@ sudo apt-get install git ansible
 cd $HOME
 git clone --recursive git@github.com:mflova/mflova-linux-setup.git
 cd mflova-linux-setup
+git submodule update --init --recursive
 ansible-playbook --ask-become full_installation.yaml
 ```
 You can also disable/enable the components that you want to install in `full_installation.yaml`.
