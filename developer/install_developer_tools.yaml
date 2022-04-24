@@ -38,7 +38,6 @@
 
   - name: Install FZF
     shell: "{{playbook_dir}}/fzf/install"
-    become: no
 
   - name: Clone FZF marks
     ansible.builtin.git:
