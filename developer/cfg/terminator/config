@@ -15,6 +15,9 @@
     show_titlebar = False
     use_system_font = False
     copy_on_selection = True
+    background_color = "#24283b"
+    foreground_color = "#a9b1d6"
+    palette = "#1a1b26:#f7768e:#9ece6a:#e0af68:#7aa2f7:#9a7ecc:#4abaaf:#acb0d0:#4e5173:#f7768e:#9ece6a:#e0af68:#7aa2f7:#9a7ecc:#4abaaf:#acb0d0"
 [layouts]
   [[default]]
     [[[window0]]]
