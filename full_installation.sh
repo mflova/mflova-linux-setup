@@ -14,7 +14,7 @@ if [ $? != 0 ]; then
     exit 1
 fi
 
-ansible-playbook --ask-become mflova-vim-config/script/ubuntu-setup.yaml
+ansible-playbook --ask-become mflova-vim-config/scripts/ubuntu-setup.yaml
 source ~/.bashrc
 
 if [ $? != 0 ]; then
@@ -22,7 +22,7 @@ if [ $? != 0 ]; then
     exit 1
 fi
 
-ansible-playbook --ask-become mflova-vim-config/script/full-vim-installation.yaml
+ansible-playbook --ask-become mflova-vim-config/scripts/full-vim-installation.yaml
 source ~/.bashrc
 
 if [ $? != 0 ]; then
