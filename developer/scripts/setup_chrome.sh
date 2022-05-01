@@ -23,5 +23,6 @@ else
 fi
 
 install_chrome_extension "dbepggeogbaibhgnhhndojpepiihcmeb" "vimium"
-install_chrome_extension "instaicpgjfneehieebagbmdbhnlpiopdcmna" "new tab redirect"
+install_chrome_extension "icpgjfneehieebagbmdbhnlpiopdcmna" "new tab redirect"
+install_chrome_extension "eimadpbcbfnmbkopoojfekhnkhdbieeh" "dark reader"
 

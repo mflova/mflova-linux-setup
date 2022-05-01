@@ -84,4 +84,7 @@
 
   - name: Install chrome and set up extensions
     shell: bash {{playbook_dir}}/scripts/setup_chrome.sh
-    # Side note: blank.org is my home page, set up in the "redirect tab" plugin
+
+  - name: Install chrome theme manually
+    debug:
+      msg: Go to Dark Theme for Google Chrome (https://chrome.google.com/webstore/detail/dark-theme-for-google-chr/annfbnbieaamhaimclajlajpijgkdblo)
