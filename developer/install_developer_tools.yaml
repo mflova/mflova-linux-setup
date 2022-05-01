@@ -86,5 +86,5 @@
     shell: bash {{playbook_dir}}/scripts/setup_chrome.sh
 
   - name: Install chrome theme manually
-    debug:
-      msg: Go to Dark Theme for Google Chrome (https://chrome.google.com/webstore/detail/dark-theme-for-google-chr/annfbnbieaamhaimclajlajpijgkdblo)
+    pause:
+      prompt: Go to Dark Theme for Google Chrome (https://chrome.google.com/webstore/detail/dark-theme-for-google-chr/annfbnbieaamhaimclajlajpijgkdblo)
