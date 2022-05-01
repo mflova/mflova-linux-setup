@@ -30,6 +30,10 @@
     apt:
       name: htop
 
+  - name: Install tree
+    apt:
+      name: tree
+
   - name: Configure terminator
     ansible.builtin.copy:
       src: "{{playbook_dir}}/cfg/terminator/config"
