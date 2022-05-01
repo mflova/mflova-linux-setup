@@ -38,6 +38,10 @@
     apt:
       name: flameshot
 
+  - name: Install ranger
+    apt:
+      name: ranger
+
   - name: Configure terminator
     ansible.builtin.copy:
       src: "{{playbook_dir}}/cfg/terminator/config"
