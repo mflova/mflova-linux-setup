@@ -38,10 +38,6 @@
     apt:
       name: flameshot
 
-  - name: Install ranger
-    apt:
-      name: ranger
-
   - name: Configure terminator
     ansible.builtin.copy:
       src: "{{playbook_dir}}/cfg/terminator/config"
@@ -55,19 +51,23 @@
   - name: Clone FZF
     ansible.builtin.git:
       repo: "https://github.com/junegunn/fzf.git"
-      dest: "{{playbook_dir}}/fzf"
+      dest: "{{playbook_dir}}/repos/fzf"
 
   - name: Installation FZF
-    shell: "sudo -E {{playbook_dir}}/fzf/install --key-bindings --completion --update-rc"
+    shell: "sudo -E {{playbook_dir}}/repos/fzf/install --key-bindings --completion --update-rc"
     become: no
 
   - name: Clone FZF marks
     ansible.builtin.git:
       repo: 'https://github.com/urbainvaes/fzf-marks.git'
-      dest: "{{playbook_dir}}/fzf-marks"
+      dest: "{{playbook_dir}}/repos/fzf-marks"
 
   - name: Source FZF marks
-    shell: echo "source {{playbook_dir}}/fzf-marks/fzf-marks.plugin.bash" >> ~/.bashrc
+    shell: echo "source {{playbook_dir}}/repos/fzf-marks/fzf-marks.plugin.bash" >> ~/.bashrc
+    become: no
+
+  - name: Add FZF-based scripts for bookmarks in chrome
+    shell: echo bind '"\C-b":"bash $HOME/mflova-linux-setup/developer/scripts/fzf-bookmarks/fzf_bookmarks.sh\n"' >> ~/.bashrc
     become: no
 
   - name: Setting up git alias for checkout
@@ -86,9 +86,45 @@
     shell: git config --global alias.ci commit
     become: no
 
+  - name: Install ranger
+    apt:
+      name:
+        - ranger
+        - highlight
+
+  - name: Install ranger image visualizer
+    apt:
+      name: w3m-img
+
+  - name: Copy ranger config file
+    ansible.builtin.copy:
+      src: "{{playbook_dir}}/developer/cfg/ranger/rc.conf"
+      dest: "{{HOME.stdout_lines[0]}}/.config/ranger/"
+
+  - name: Set nvim as the default document viewer in ranger
+    shell: echo "export EDITOR=nvim" >> ~/.bashrc
+    become: no
+
+  - name: Install fzf ranger dependencies
+    apt:
+      name:
+        - findutils
+        - mlocate
+
+  - name: Install fzf for ranger
+    ansible.builtin.copy:
+      src: "{{playbook_dir}}/developer/cfg/ranger/commands.py"
+      dest: "{{HOME.stdout_lines[0]}}/.local/share/fonts"
+
+  - name: Install fzf marks for ranger
+    ansible.builtin.git:
+      repo: 'https://github.com/laggardkernel/ranger-fzf-marks.git'
+      dest: "{{HOME.stdout_lines[0]}}/.config/ranger/plugins/fzf-marks"
+
   - name: Install chrome and set up extensions
     shell: bash {{playbook_dir}}/scripts/setup_chrome.sh
 
   - name: Install chrome theme manually
     pause:
       prompt: Go to Dark Theme for Google Chrome (https://chrome.google.com/webstore/detail/dark-theme-for-google-chr/annfbnbieaamhaimclajlajpijgkdblo)
+

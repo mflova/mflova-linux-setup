@@ -1,24 +1,64 @@
 [global_config]
   borderless = True
-  suppress_multiple_term_dialog = True
 [keybindings]
-  split_horiz = <Primary><Shift>o
-  split_vert = <Primary><Shift>e
-  toggle_zoom = <Primary><Shift>x
-  broadcast_group = <Alt>o
-  broadcast_all = <Alt>o
+    breadcast_all = None
+    breadcast_group = None
+    breadcast_off = None
+    close_term = None
+    close_window = None
+    cycle_next = None
+    cycle_prev = None
+    edit_window_title = None
+    full_screen = None
+    go_down = None
+    go_left = None
+    go_next = None
+    go_prev = None
+    go_right = None
+    go_up = None
+    group_all = None
+    group_tab = None
+    help = None
+    hide_window = None
+    insert_number = None
+    insert_padded = None
+    layout_launcher = None
+    move_tab_left = None
+    move_tab_right = None
+    new_terminator = None
+    new_window = None
+    reset = None
+    reset_clear = None
+    resize_down = None
+    resize_left = None
+    resize_right = None
+    resize_up = None
+    rotate_ccw = None
+    rotate_cw = None
+    scaled_zoom = None
+    search = None
+    split_horiz = None
+    split_vert = None
+    switch_to_tab_1 = None
+    toggle_scrollbar = None
+    toggle_zoom = None
+    ungroup_all = None
+    ungroup_tab = None
+    zoom_in = None
+    zoom_normal = None
+    zoom_out = None
 [profiles]
   [[default]]
     allow_bold = False
+    background_color = "#24283b"
     cursor_color = "#aaaaaa"
     font = Hack Nerd Font 10.5
+    foreground_color = "#ffffff"
     show_titlebar = False
-    use_system_font = False
-    copy_on_selection = True
-    background_color = "#24283b"
-    foreground_color = "#a9b1d6"
     scrollbar_position = hidden
     palette = "#1a1b26:#f7768e:#9ece6a:#e0af68:#7aa2f7:#9a7ecc:#4abaaf:#acb0d0:#4e5173:#f7768e:#9ece6a:#e0af68:#7aa2f7:#9a7ecc:#4abaaf:#acb0d0"
+    use_system_font = False
+    copy_on_selection = True
 [layouts]
   [[default]]
     [[[window0]]]
@@ -28,4 +68,3 @@
       type = Terminal
       parent = window0
 [plugins]
-
