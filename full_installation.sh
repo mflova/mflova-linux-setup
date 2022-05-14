@@ -14,6 +14,14 @@ if [ $? != 0 ]; then
     exit 1
 fi
 
+ansible-playbook --ask-become mflova-i3-setup/playbooks/install_polybar.yaml
+source ~/.bashrc
+
+if [ $? != 0 ]; then
+    echo "i3-polybar not correctly isntalled."
+    exit 1
+fi
+
 ansible-playbook --ask-become mflova-vim-config/scripts/bashrc_setup.yaml
 source ~/.bashrc
 

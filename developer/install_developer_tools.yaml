@@ -119,6 +119,7 @@
     ansible.builtin.git:
       repo: 'https://github.com/laggardkernel/ranger-fzf-marks.git'
       dest: "{{HOME.stdout_lines[0]}}/.config/ranger/plugins/fzf-marks"
+    become: no
 
   - name: Install chrome and set up extensions
     shell: bash {{playbook_dir}}/scripts/setup_chrome.sh
