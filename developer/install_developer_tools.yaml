@@ -66,10 +66,6 @@
     shell: echo "source {{playbook_dir}}/repos/fzf-marks/fzf-marks.plugin.bash" >> ~/.bashrc
     become: no
 
-  - name: Add FZF-based scripts for bookmarks in chrome
-    shell: echo bind '"\C-b":"bash $HOME/mflova-linux-setup/developer/scripts/fzf-bookmarks/fzf_bookmarks.sh\n"' >> ~/.bashrc
-    become: no
-
   - name: Setting up git alias for checkout
     shell: git config --global alias.co checkout
     become: no
@@ -114,7 +110,7 @@
   - name: Install fzf for ranger
     ansible.builtin.copy:
       src: "{{playbook_dir}}/cfg/ranger/commands.py"
-      dest: "{{HOME.stdout_lines[0]}}/.local/share/fonts"
+      dest: "{{HOME.stdout_lines[0]}}/.config/ranger"
 
   - name: Install fzf marks for ranger
     ansible.builtin.git:
@@ -126,5 +122,5 @@
 
   - name: Install chrome theme manually
     pause:
-      prompt: Go to Dark Theme for Google Chrome (https://chrome.google.com/webstore/detail/tokyonight/enpfonmmpgoinjpglildebkaphbhndek?hl=en)
+      prompt: Go to Tokyo Night Theme for Google Chrome (https://chrome.google.com/webstore/detail/tokyonight/enpfonmmpgoinjpglildebkaphbhndek?hl=en)
 
