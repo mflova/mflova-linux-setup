@@ -98,7 +98,7 @@
 
   - name: Copy ranger config file
     ansible.builtin.copy:
-      src: "{{playbook_dir}}/developer/cfg/ranger/rc.conf"
+      src: "{{playbook_dir}}/cfg/ranger/rc.conf"
       dest: "{{HOME.stdout_lines[0]}}/.config/ranger/"
 
   - name: Set nvim as the default document viewer in ranger
@@ -113,7 +113,7 @@
 
   - name: Install fzf for ranger
     ansible.builtin.copy:
-      src: "{{playbook_dir}}/developer/cfg/ranger/commands.py"
+      src: "{{playbook_dir}}/cfg/ranger/commands.py"
       dest: "{{HOME.stdout_lines[0]}}/.local/share/fonts"
 
   - name: Install fzf marks for ranger
@@ -126,5 +126,5 @@
 
   - name: Install chrome theme manually
     pause:
-      prompt: Go to Dark Theme for Google Chrome (https://chrome.google.com/webstore/detail/dark-theme-for-google-chr/annfbnbieaamhaimclajlajpijgkdblo)
+      prompt: Go to Dark Theme for Google Chrome (https://chrome.google.com/webstore/detail/tokyonight/enpfonmmpgoinjpglildebkaphbhndek?hl=en)
 

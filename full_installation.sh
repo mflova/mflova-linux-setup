@@ -6,7 +6,7 @@ if [ $? != 0 ]; then
     exit 1
 fi
 
-ansible-playbook --ask-become mflova-i3-setup/install_i3.yaml
+ansible-playbook --ask-become mflova-i3-setup/playbooks/install_i3.yaml
 source ~/.bashrc
 
 if [ $? != 0 ]; then
@@ -14,7 +14,7 @@ if [ $? != 0 ]; then
     exit 1
 fi
 
-ansible-playbook --ask-become mflova-vim-config/scripts/ubuntu-setup.yaml
+ansible-playbook --ask-become mflova-vim-config/scripts/bashrc_setup.yaml
 source ~/.bashrc
 
 if [ $? != 0 ]; then
@@ -22,7 +22,7 @@ if [ $? != 0 ]; then
     exit 1
 fi
 
-ansible-playbook --ask-become mflova-vim-config/scripts/full-vim-installation.yaml
+ansible-playbook --ask-become mflova-vim-config/scripts/nvim_installation.yaml
 source ~/.bashrc
 
 if [ $? != 0 ]; then
