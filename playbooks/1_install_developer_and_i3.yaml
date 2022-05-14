@@ -1,5 +1,5 @@
-- name: Install full I3
+- name: Install developer tools
   import_playbook: "{{playbook_dir}}/../developer/install_developer_tools.yaml"
 
 - name: Install full I3
-  import_playbook: "{{playbook_dir}}/../mfova-i3-setup/playbooks/full_installation.yaml"
+  import_playbook: "{{playbook_dir}}/../mflova-i3-setup/playbooks/full_installation.yaml"
