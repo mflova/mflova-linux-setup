@@ -42,6 +42,7 @@
     ansible.builtin.copy:
       src: "{{playbook_dir}}/cfg/terminator/config"
       dest: "{{HOME.stdout_lines[0]}}/.config/terminator/"
+    become: no
 
   - name: Install fonts
     ansible.builtin.copy:
@@ -96,6 +97,7 @@
     ansible.builtin.copy:
       src: "{{playbook_dir}}/cfg/ranger/rc.conf"
       dest: "{{HOME.stdout_lines[0]}}/.config/ranger/"
+    become: no
 
   - name: Set nvim as the default document viewer in ranger
     shell: echo "export EDITOR=nvim" >> ~/.bashrc
@@ -111,6 +113,7 @@
     ansible.builtin.copy:
       src: "{{playbook_dir}}/cfg/ranger/commands.py"
       dest: "{{HOME.stdout_lines[0]}}/.config/ranger"
+    become: no
 
   - name: Install fzf marks for ranger
     ansible.builtin.git:
