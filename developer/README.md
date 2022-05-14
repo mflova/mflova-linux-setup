@@ -42,3 +42,5 @@ Main keys used:
 - Ctrl+g: FZF marks
 - Ctrl+p: FZF files and folders from current dir
 - Ctrl+w: Set image as wallpaper (not at startup)
+- o: Sort by any criteria
+- 1l: Uncompress zip
