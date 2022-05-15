@@ -1,2 +1,2 @@
 - name: Bashrc setup for neovim
-  import_playbook: "{{playbook_dir}}/../mflova-vim-config/playbooks/bashrc_setup.yaml"
+  import_playbook: "{{playbook_dir}}/../mflova-vim-config/playbooks/install_nvim_setup.yaml"

@@ -53,6 +53,7 @@
     ansible.builtin.git:
       repo: "https://github.com/junegunn/fzf.git"
       dest: "{{playbook_dir}}/repos/fzf"
+    become: no
 
   - name: Installation FZF
     shell: "sudo -E {{playbook_dir}}/repos/fzf/install --key-bindings --completion --update-rc"
@@ -62,6 +63,7 @@
     ansible.builtin.git:
       repo: 'https://github.com/urbainvaes/fzf-marks.git'
       dest: "{{playbook_dir}}/repos/fzf-marks"
+    become: no
 
   - name: Source FZF marks
     shell: echo "source {{playbook_dir}}/repos/fzf-marks/fzf-marks.plugin.bash" >> ~/.bashrc
