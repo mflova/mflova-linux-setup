@@ -123,6 +123,12 @@
       dest: "{{HOME.stdout_lines[0]}}/.config/ranger/plugins/fzf-marks"
     become: no
 
+  - name: Install tool compression tool ranger
+    ansible.builtin.git:
+      repo: 'https://github.com/maximtrp/ranger-archives.git'
+      dest: "{{HOME.stdout_lines[0]}}/.config/ranger/plugins/ranger-archives"
+    become: no
+
   - name: Change ranger dir ownership
     file:
         path: "/home/{{USER.stdout_lines[0]}}/.config/ranger"
@@ -146,3 +152,6 @@
     pause:
       prompt: Go to Tokyo Night Theme for Google Chrome (https://chrome.google.com/webstore/detail/tokyonight/enpfonmmpgoinjpglildebkaphbhndek?hl=en)
 
+  - name: Install dark reader
+    pause:
+      prompt: Go to Dark Reader for Google Chrome (https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh/related)
