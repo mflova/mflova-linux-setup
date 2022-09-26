@@ -29,6 +29,7 @@ alias newcleanpython='virtualenv $HOME/pythonenvs/clean'
 alias cleanpython='source $HOME/pythonenvs/clean/bin/activate'
 alias r='ranger'
 alias h='htop'
+alias cat='bat'
 
 # FZF branches
 alias br='git checkout $(git branch | fzf)'
