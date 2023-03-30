@@ -159,3 +159,8 @@
   - name: Install dark reader
     pause:
       prompt: Go to Dark Reader for Google Chrome (https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh/related)
+      
+  - name: New tab redirect choose page
+    pause:
+      prompt: Go to the plugin New Tab Redirect (install it in case it is not) and and select following website at starting home page in its options (http://color.aurlien.net/#72749e)
+      
