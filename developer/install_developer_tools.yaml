@@ -34,6 +34,10 @@
     apt:
       name: tree
 
+  - name: Install Notion
+    snap:
+      name: notion-snap
+
   - name: Install flameshot
     apt:
       name: flameshot
