@@ -36,7 +36,7 @@
 
   - name: Install Notion
     snap:
-      name: notion-snap
+      name: notion-snap-reborn
 
   - name: Install flameshot
     apt:
