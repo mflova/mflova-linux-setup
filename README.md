@@ -35,5 +35,5 @@ git clone --recursive git@github.com:mflova/mflova-linux-setup.git
 cd mflova-linux-setup
 ansible-playbook --ask-become playbooks/1_install_developer_and_i3.yaml
 ansible-playbook --ask-become playbooks/2_install_pre_nvim.yaml
-ansible-playbook --ask-become playbooks/3_installnvim.yaml
+ansible-playbook --ask-become playbooks/3_install_nvim.yaml
 ```
